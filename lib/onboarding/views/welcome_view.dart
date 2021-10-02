@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sunshine/common/colors.dart';
 
 class WelcomeView extends StatelessWidget {
@@ -41,11 +42,24 @@ class WelcomeView extends StatelessWidget {
               child: CupertinoButton(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  child: const Text("Продолжить",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(right: 12),
+                        child: Text("Продолжить",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18)),
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.arrowRight,
+                        color: Colors.black,
+                        size: 20,
+                      )
+                    ],
+                  ),
                   color: Colors.white,
                   onPressed: () {
                     print("Continue");
