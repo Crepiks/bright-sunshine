@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sunshine/onboarding/views/welcome_view.dart';
 
 void main() {
   runApp(const App());
@@ -15,10 +16,6 @@ class App extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Scaffold(
-          body: Center(
-            child: Text("Hello, Sunshine!"),
-          ),
-        ));
+        home: const WelcomeView());
   }
 }
