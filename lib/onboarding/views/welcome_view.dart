@@ -23,7 +23,7 @@ class WelcomeView extends StatelessWidget {
                     child: const Image(
                         image: AssetImage("assets/images/backpack-space.png"))),
                 const Text(
-                  "Помогаем следить за уровнем освещенности",
+                  "Monitor solar data with Sunshine",
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
@@ -32,7 +32,7 @@ class WelcomeView extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 14),
                   child: Text(
-                    'Sunshine использует API NASA с данными об освещенности по всему миру, чтобы Вам легче было принять решение о покупке солнечных батарей',
+                    'Sunshine uses NASA API of solar data all over the world to provide relevant data for owners of solar bataries',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 )
@@ -48,7 +48,7 @@ class WelcomeView extends StatelessWidget {
                     children: const [
                       Padding(
                         padding: EdgeInsets.only(right: 12),
-                        child: Text("Продолжить",
+                        child: Text("Let's get started",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
