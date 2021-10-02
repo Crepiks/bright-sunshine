@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:sunshine/onboarding/views/welcome_view.dart';
+import 'package:sunshine/common/colors.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -8,16 +8,25 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CupertinoButton(
-            child: const Text("Back"),
-            onPressed: () {
-              Navigator.pushReplacement(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => const WelcomeView()));
-            }),
-      ),
-    );
+        backgroundColor: backgroundColor,
+        body: SafeArea(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Column(children: [
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Sunshine",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    "Алматы",
+                    style: TextStyle(fontSize: 16),
+                  )
+                ])
+          ]),
+        )));
   }
 }
