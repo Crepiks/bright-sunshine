@@ -12,8 +12,30 @@ class WelcomeView extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Column(
+              children: [
+                Container(
+                    padding: const EdgeInsets.only(top: 60, bottom: 60),
+                    child: const Image(
+                        image: AssetImage("assets/images/backpack-space.png"))),
+                const Text(
+                  "Помогаем следить за уровнем освещенности",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 14),
+                  child: Text(
+                    'Sunshine использует API NASA с данными об освещенности по всему миру, чтобы Вам легче было принять решение о покупке солнечных батарей',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                )
+              ],
+            ),
             SizedBox(
               width: double.infinity,
               child: CupertinoButton(
