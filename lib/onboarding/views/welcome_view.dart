@@ -25,7 +25,7 @@ class WelcomeView extends StatelessWidget {
                   "Помогаем следить за уровнем освещенности",
                   style: TextStyle(
                       fontSize: 30,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white),
                 ),
                 const Padding(
