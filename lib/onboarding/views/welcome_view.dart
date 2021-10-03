@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sunshine/common/action_button.dart';
 import 'package:sunshine/common/colors.dart';
-import 'package:sunshine/home/views/home_view.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -16,63 +17,86 @@ class WelcomeView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              children: [
-                Container(
-                    padding: const EdgeInsets.only(top: 60, bottom: 60),
-                    child: const Image(
-                        image: AssetImage("assets/images/backpack-space.png"))),
-                const Text(
-                  "Monitor solar data with Sunshine",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 14),
-                  child: Text(
-                    'Sunshine uses NASA API of solar data all over the world to provide relevant data for owners of solar bataries',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.1,
                   ),
-                )
-              ],
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: CupertinoButton(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(right: 12),
-                        child: Text("Let's get started",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18)),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Sunshine",
+                        style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.blackColor),
                       ),
-                      FaIcon(
-                        FontAwesomeIcons.arrowRight,
-                        color: Colors.black,
-                        size: 20,
-                      )
+                      SizedBox(
+                        width: 10,
+                      ),
+                      FaIcon(FontAwesomeIcons.solidSun,
+                          color: AppColors.blackColor, size: 40)
                     ],
                   ),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => const HomeView()));
-                  }),
+                  SizedBox(height: 15),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Text(
+                      'Application for tracking solar data',
+                      style: TextStyle(
+                          color: AppColors.blackColor,
+                          fontSize: 22,
+                          height: 1.3),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SvgPicture.asset(
+                    "assets/images/welcome-image.svg",
+                    width: MediaQuery.of(context).size.width,
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 25),
+              child: SizedBox(
+                  width: double.infinity,
+                  child: ActionButton(
+                    buttonContent: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Start",
+                          style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        FaIcon(
+                          FontAwesomeIcons.arrowRight,
+                          color: Colors.black,
+                          size: 18,
+                        )
+                      ],
+                    ),
+                    buttonClicked: () => {},
+                    reverseColor: true,
+                  )),
             )
           ],
         ),
       )),
-      backgroundColor: primaryColor,
+      backgroundColor: AppColors.backgroundColor,
     );
   }
 }

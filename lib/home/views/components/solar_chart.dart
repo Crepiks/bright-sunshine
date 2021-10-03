@@ -65,7 +65,7 @@ class BarChartSample1State extends State<SolarChart> {
     int x,
     double y, {
     bool isTouched = false,
-    Color barColor = primaryColor,
+    Color barColor = AppColors.primaryColor,
     double width = 20,
     List<int> showTooltips = const [],
   }) {
@@ -145,7 +145,7 @@ class BarChartSample1State extends State<SolarChart> {
               TextSpan(
                 text: rod.y.toString(),
                 style: const TextStyle(
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
