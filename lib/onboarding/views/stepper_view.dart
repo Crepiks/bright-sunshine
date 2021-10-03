@@ -120,7 +120,9 @@ class _StepperViewState extends State<StepperView> {
                           : Container()
                     ],
                   ),
-                  buttonClicked: () => nextPage(),
+                  buttonClicked: _pageNumber != _stepperData.length - 1
+                      ? () => nextPage()
+                      : () => Navigator.pushReplacementNamed(context, "home"),
                 )
               ],
             ),
