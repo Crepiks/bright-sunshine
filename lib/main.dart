@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sunshine/home/views/home_view.dart';
+import 'package:sunshine/onboarding/views/stepper_view.dart';
 import 'package:sunshine/onboarding/views/welcome_view.dart';
 
 void main() => {
@@ -11,6 +12,7 @@ void main() => {
         initialRoute: "/",
         routes: {
           "/": (context) => WelcomeView(),
+          "stepper": (context) => StepperView(),
           "home": (context) => HomeView()
         },
       ))
