@@ -19,116 +19,122 @@ class BarChartSample1State extends State<SolarChart> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: Container(
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Stack(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Week',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      GestureDetector(
-                          onTap: () => {
-                                showModalBottomSheet(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(30),
-                                            topRight: Radius.circular(30))),
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 30),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10),
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "About data",
-                                                    style: TextStyle(
-                                                        color: AppColors
-                                                            .blackColor,
-                                                        fontSize: 28,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 14,
-                                                  ),
-                                                  Text(
-                                                    "We use the NASA POWER API to display solar data",
-                                                    style: TextStyle(
-                                                        color: AppColors
-                                                            .black80Color,
-                                                        fontSize: 20,
-                                                        height: 1.4),
-                                                  )
-                                                ],
+    return Container(
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(color: AppColors.blackColor.withOpacity(0.03), blurRadius: 20)
+      ]),
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: Container(
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(20))),
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Week',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        GestureDetector(
+                            onTap: () => {
+                                  showModalBottomSheet(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(30),
+                                              topRight: Radius.circular(30))),
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20, vertical: 30),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 10),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      "About data",
+                                                      style: TextStyle(
+                                                          color: AppColors
+                                                              .blackColor,
+                                                          fontSize: 28,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 14,
+                                                    ),
+                                                    Text(
+                                                      "We use the NASA POWER API to display solar data",
+                                                      style: TextStyle(
+                                                          color: AppColors
+                                                              .black80Color,
+                                                          fontSize: 20,
+                                                          height: 1.4),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              width: double.infinity,
-                                              child: ActionButton(
-                                                buttonContent: Text("Got it"),
-                                                buttonClicked: () =>
-                                                    Navigator.pop(context),
-                                                reverseColor: true,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      );
-                                    })
-                              },
-                          child: Text("About data",
-                              style: TextStyle(
-                                  color: AppColors.primaryColor,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600)))
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: BarChart(
-                        mainBarData(),
-                        swapAnimationDuration: animDuration,
+                                              SizedBox(
+                                                width: double.infinity,
+                                                child: ActionButton(
+                                                  buttonContent: Text("Got it"),
+                                                  buttonClicked: () =>
+                                                      Navigator.pop(context),
+                                                  reverseColor: true,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        );
+                                      })
+                                },
+                            child: Text("About data",
+                                style: TextStyle(
+                                    color: AppColors.primaryColor,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600)))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: BarChart(
+                          mainBarData(),
+                          swapAnimationDuration: animDuration,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
